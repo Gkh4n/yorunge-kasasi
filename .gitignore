@@ -1,0 +1,33 @@
+# JavaScript / Sites
+**/node_modules/
+**/.next/
+**/.vinext/
+**/.wrangler/
+**/dist/
+**/*.tsbuildinfo
+**/wrangler.local.jsonc
+orbit-vault/public/game.html
+orbit-vault/public/game.css
+orbit-vault/public/game.js
+
+# Android outputs and signing material
+yorunge-kasasi-android/build/
+yorunge-kasasi-android/output/
+yorunge-kasasi-android/signing/
+yorunge-kasasi-android/app/src/main/assets/www/
+*.apk
+*.aab
+*.idsig
+*.keystore
+*.jks
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

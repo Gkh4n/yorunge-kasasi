@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1789459028257,
+      "tag": "0000_elite_ken_ellis",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1789460625994,
+      "tag": "0001_vengeful_madrox",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789480115259,
+      "tag": "0002_wide_squadron_sinister",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1789501927863,
+      "tag": "0003_broken_cerise",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1789565461718,
+      "tag": "0004_boring_layla_miller",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1789567253315,
+      "tag": "0005_daffy_phil_sheldon",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1789569470498,
+      "tag": "0006_narrow_mindworm",
+      "breakpoints": true
+    }
+  ]
+}

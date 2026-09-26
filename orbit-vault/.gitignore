@@ -1,0 +1,11 @@
+dist/
+qa-*.png
+.wrangler/
+wrangler.local.jsonc
+node_modules/
+.next/
+.vinext/
+public/game.html
+public/game.css
+public/game.js
+*.tsbuildinfo
