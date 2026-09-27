@@ -94,7 +94,7 @@ public final class MainActivity extends Activity {
     settings.setCacheMode(WebSettings.LOAD_DEFAULT);
     settings.setSupportZoom(false);
     settings.setBuiltInZoomControls(false);
-    settings.setUserAgentString(settings.getUserAgentString() + " YorungeKasasiAndroid/1.9.6");
+    settings.setUserAgentString(settings.getUserAgentString() + " YorungeKasasiAndroid/1.9.7");
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) WebView.startSafeBrowsing(this, null);
 
     view.setWebChromeClient(new WebChromeClient());
