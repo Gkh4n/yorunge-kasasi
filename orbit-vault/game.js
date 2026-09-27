@@ -9,7 +9,7 @@
     finalPerfect: $('finalPerfect'), finalBest: $('finalBest'), resultNote: $('resultNote'),
     finalHitsLabel: $('finalHitsLabel'), finalPerfectLabel: $('finalPerfectLabel'), finalBestLabel: $('finalBestLabel'),
     resultRank: $('resultRank'), resultEyebrow: $('resultEyebrow'), profileForm: $('profileForm'),
-    usernameInput: $('usernameInput'), passwordInput: $('passwordInput'), loginBtn: $('loginBtn'), registerBtn: $('registerBtn'),
+    usernameInput: $('usernameInput'), passwordInput: $('passwordInput'), loginBtn: $('loginBtn'), registerBtn: $('registerBtn'), guestBtn: $('guestBtn'),
     profileError: $('profileError'), profileSummary: $('profileSummary'),
     profileAvatar: $('profileAvatar'), profileName: $('profileName'), profileGames: $('profileGames'),
     profileRank: $('profileRank'), leaderRows: $('leaderRows'), leagueStatus: $('leagueStatus'),
@@ -56,7 +56,7 @@
       settings_open: 'Ayarları aç', pause_label: 'Oyunu durdur', resume_label: 'Oyuna devam et', game_label: 'Yörünge Kasası oyunu', profile_open: 'Profili aç', admin_open: 'Yönetim panelini aç', admin_close: 'Yönetim panelini kapat',
       speed: 'Hız', vault: 'Kasa', streak: 'Seri', lives: 'Kalan hak', arena_label: 'Yakalamak için oyun alanına dokun',
       tap_hint: 'Gezegen kapıdayken dokun', tap_zone_title: 'OYUN ALANINA DOKUN', tap_zone_detail: 'Gezegeni kapının içinde yakala', energy_at_risk: 'riskteki enerji', bank: 'KASALA', use_power: 'KULLAN', coins: 'JETON', username: 'Kullanıcı adı', password: 'Şifre',
-      login: 'GİRİŞ YAP', create_account: 'KAYIT OL', login_processing: 'Giriş yapılıyor…', register_processing: 'Hesap oluşturuluyor…', player: 'Oyuncu', ranking: 'SIRALAMA', mode_select: 'Oyun modu seçimi', classic: 'KLASİK',
+      login: 'GİRİŞ YAP', create_account: 'KAYIT OL', guest_play: 'MİSAFİR OYNA', login_processing: 'Giriş yapılıyor…', register_processing: 'Hesap oluşturuluyor…', player: 'Oyuncu', ranking: 'SIRALAMA', mode_select: 'Oyun modu seçimi', classic: 'KLASİK',
       classic_detail: '3 hak · sınırsız', meteor: 'METEOR YAĞMURU', meteor_detail: 'Kapıyı kaydır · meteorları yakala', meteor_arena_label: 'Kapıyı sağa sola sürükleyerek meteorları yakala', meteor_steer: 'KAPIYI SAĞA SOLA SÜRÜKLE',
       leaderboard_label: 'Skor sıralaması', score_league: 'SKOR LİGİ', classic_short: 'KLASİK', meteor_short: 'METEOR', now: 'Şimdi', player_col: 'OYUNCU', game_col: 'OYUN',
       score_col: 'SKOR', scores_loading: 'Skorlar yükleniyor…', game_completed: 'Oyun tamamlandı', score_saving: 'Skorun kaydediliyor…',
@@ -87,7 +87,7 @@
       daily_reset: 'Her gün yenilenir', member_since: 'OYUNCU OLDU', account_linked: 'Hesaba kaydedildi · {email}', account_password: 'Kullanıcı adı ve şifreyle korunuyor', account_legacy: 'Şifre oluşturulmamış eski hesap',
       account_conflict: 'Bu oyuncu başka bir hesaba bağlı.', admin_panel: 'Yönetim Paneli', admin_only: 'YALNIZCA YÖNETİCİ', active_now: 'ŞİMDİ AKTİF', played_ever: 'BUGÜNE KADAR OYNAYAN', registered_players: 'KAYITLI OYUNCU', games_today: 'BUGÜNKÜ OYUN', search_player: 'Oyuncu ara', refresh: 'YENİLE', admin_loading: 'Oyuncular yükleniyor…', admin_empty: 'Oyuncu bulunamadı.', admin_live: 'AKTİF', admin_user_meta: '{games} oyun · Rekor {score} · Son: {last}', admin_delete: 'SİL', admin_deleted: '{username} hesabı silindi.', admin_account: 'Yönetici hesabı · Liglerde görünmez', admin_result: 'Yönetici testi · Skor liglere yansımaz', admin_delete_close: 'Silme onayını kapat', admin_delete_kicker: 'OYUNCU HESABI', admin_delete_title_suffix: 'silinsin mi?', admin_delete_message: 'Bu oyuncunun skorları, gezegenleri, ilerlemesi ve tüm oyun geçmişi kalıcı olarak silinecek.', admin_delete_irreversible: 'Bu işlem geri alınamaz.', admin_delete_button: 'HESABI SİL', admin_deleting: 'Hesap siliniyor…', account_removed_kicker: 'HESAP BİLDİRİMİ', account_removed_title: 'Hesabınız silindi', account_removed_message: 'hesabı yönetici tarafından silindi. Bu hesaba ait oyun verilerine artık erişilemez.', create_new_account: 'YENİ HESAP AÇ', sign_in_other: 'BAŞKA HESABA GİR', account_removed_by_admin: 'Önceki hesabınız yönetici tarafından silindi.', create_account_hint: 'Yeni kullanıcı adı ve şifre belirleyerek hesap oluştur.', sign_in_other_hint: 'Başka bir hesabın kullanıcı adı ve şifresiyle giriş yap.',
       minute_short: '{minutes} dk', hour_minute_short: '{hours} sa {minutes} dk', less_than_minute: '1 dk’dan az',
-      guest_status: 'Giriş yap veya yeni hesap oluştur.', network_error: 'Bağlantı kurulamadı.', profile_loading: 'Bilgiler yükleniyor…',
+      guest_status: 'Giriş yap, hesap oluştur veya misafir olarak oyna.', guest_name: 'Misafir', guest_profile_detail: 'Skor ligine dahil olmaz · Hesaba geçmek için dokun', guest_ready: 'Misafir modu · Skorların lige gönderilmez.', guest_result: 'Misafir oyunu · Skor ligine gönderilmedi', network_error: 'Bağlantı kurulamadı.', profile_loading: 'Bilgiler yükleniyor…',
       password_invalid: 'Şifre en az 8 karakter olmalı; bir harf ve bir sayı içermeli.', wrong_credentials: 'Kullanıcı adı veya şifre hatalı.',
       legacy_password_missing: 'Bu eski hesapta şifre yok. Açık olan eski oturumdan şifre oluştur.', too_many_attempts: 'Çok fazla hatalı deneme. 15 dakika sonra tekrar dene.',
       profile_meteor: '{games} Meteor oyunu · Rekor {record}', profile_classic: '{games} Klasik oyun · Rekor {record}',
@@ -121,7 +121,7 @@
       settings_open: 'Open settings', pause_label: 'Pause game', resume_label: 'Resume game', game_label: 'Orbit Vault game', profile_open: 'Open profile', admin_open: 'Open admin panel', admin_close: 'Close admin panel',
       speed: 'Speed', vault: 'Vault', streak: 'Streak', lives: 'Lives remaining', arena_label: 'Tap the game area to catch',
       tap_hint: 'Tap when the planet reaches the gate', tap_zone_title: 'TAP THE PLAY AREA', tap_zone_detail: 'Catch the planet inside the gate', energy_at_risk: 'energy at risk', bank: 'BANK', use_power: 'USE', coins: 'COINS', username: 'Username', password: 'Password',
-      login: 'SIGN IN', create_account: 'CREATE ACCOUNT', login_processing: 'Signing in…', register_processing: 'Creating account…', player: 'Player', ranking: 'RANK', mode_select: 'Game mode selection', classic: 'CLASSIC',
+      login: 'SIGN IN', create_account: 'CREATE ACCOUNT', guest_play: 'PLAY AS GUEST', login_processing: 'Signing in…', register_processing: 'Creating account…', player: 'Player', ranking: 'RANK', mode_select: 'Game mode selection', classic: 'CLASSIC',
       classic_detail: '3 lives · endless', meteor: 'METEOR STORM', meteor_detail: 'Slide the gate · catch meteors', meteor_arena_label: 'Slide the gate left and right to catch meteors', meteor_steer: 'DRAG THE GATE LEFT AND RIGHT',
       leaderboard_label: 'Score leaderboard', score_league: 'SCORE LEAGUE', classic_short: 'CLASSIC', meteor_short: 'METEOR', now: 'Now', player_col: 'PLAYER', game_col: 'GAMES',
       score_col: 'SCORE', scores_loading: 'Loading scores…', game_completed: 'Game complete', score_saving: 'Saving your score…',
@@ -152,7 +152,7 @@
       daily_reset: 'Refreshes every day', member_since: 'JOINED', account_linked: 'Saved to account · {email}', account_password: 'Protected by username and password', account_legacy: 'Legacy account without a password',
       account_conflict: 'This player is linked to another account.', admin_panel: 'Admin Panel', admin_only: 'ADMIN ONLY', active_now: 'ACTIVE NOW', played_ever: 'PLAYED TO DATE', registered_players: 'REGISTERED PLAYERS', games_today: 'GAMES TODAY', search_player: 'Search players', refresh: 'REFRESH', admin_loading: 'Loading players…', admin_empty: 'No players found.', admin_live: 'ACTIVE', admin_user_meta: '{games} games · Best {score} · Last: {last}', admin_delete: 'DELETE', admin_deleted: '{username} was deleted.', admin_account: 'Administrator account · Hidden from leagues', admin_result: 'Admin test · Score is hidden from leagues', admin_delete_close: 'Close deletion confirmation', admin_delete_kicker: 'PLAYER ACCOUNT', admin_delete_title_suffix: 'will be deleted?', admin_delete_message: 'This player’s scores, planets, progress, and complete game history will be permanently deleted.', admin_delete_irreversible: 'This action cannot be undone.', admin_delete_button: 'DELETE ACCOUNT', admin_deleting: 'Deleting account…', account_removed_kicker: 'ACCOUNT NOTICE', account_removed_title: 'Your account was deleted', account_removed_message: 'was deleted by an administrator. This account’s game data is no longer available.', create_new_account: 'CREATE NEW ACCOUNT', sign_in_other: 'SIGN IN TO ANOTHER ACCOUNT', account_removed_by_admin: 'Your previous account was deleted by an administrator.', create_account_hint: 'Choose a new username and password to create an account.', sign_in_other_hint: 'Sign in with another account’s username and password.',
       minute_short: '{minutes} min', hour_minute_short: '{hours} hr {minutes} min', less_than_minute: 'Under 1 min',
-      guest_status: 'Sign in or create a new account.', network_error: 'Connection failed.', profile_loading: 'Loading player data…',
+      guest_status: 'Sign in, create an account, or play as a guest.', guest_name: 'Guest', guest_profile_detail: 'Not ranked · Tap to switch to an account', guest_ready: 'Guest mode · Scores are not submitted to leagues.', guest_result: 'Guest game · Score was not submitted to the league', network_error: 'Connection failed.', profile_loading: 'Loading player data…',
       password_invalid: 'Password must be at least 8 characters and include one letter and one number.', wrong_credentials: 'Incorrect username or password.',
       legacy_password_missing: 'This legacy account has no password. Create one from an existing signed-in session.', too_many_attempts: 'Too many failed attempts. Try again in 15 minutes.',
       profile_meteor: '{games} Meteor games · Record {record}', profile_classic: '{games} Classic games · Record {record}',
@@ -296,6 +296,7 @@
   let progressionBusy = false;
   let selectedInfoPlanet = null;
   let accountIdentity = null;
+  let guestMode = false;
   let previousLeaguePositions = new Map();
   let leagueView = 'classic';
   let tutorialMode = 'classic';
@@ -468,12 +469,14 @@
       setPauseUi();
       if (state.finalScore !== undefined && !els.result.classList.contains('hidden')) renderResultSummary();
     }
-    if (currentPlayer) {
+    if (guestMode) renderGuestProfile();
+    else if (currentPlayer) {
       refreshProfileSummary();
       els.passwordAccountBtn.textContent = t(currentPlayer.has_password ? 'password_change' : 'password_manage');
     }
     if (adminData) renderAdminDashboard(adminData);
-    if (profile) els.leagueStatus.textContent = t('ready');
+    if (guestMode) els.leagueStatus.textContent = t('guest_ready');
+    else if (profile) els.leagueStatus.textContent = t('ready');
     if (state.gateType && state.gateType !== 'normal') els.gateBadge.textContent = t(`gate_${state.gateType}`);
     renderLeagueView();
   }
@@ -517,6 +520,7 @@
 
   function showProfile(player) {
     if (!profile) return;
+    guestMode = false;
     if (player) {
       currentPlayer = player;
       best = Math.max(0, Number(player.best_score) || 0);
@@ -551,7 +555,61 @@
     els.passwordAccountBtn.textContent = t(player?.has_password ? 'password_change' : 'password_manage');
     els.homeMissionsBtn.disabled = !player;
     els.homePlanetsBtn.disabled = !player;
+    els.shopBtn.disabled = false;
     els.leagueStatus.textContent = t('ready');
+  }
+
+  function renderGuestProfile() {
+    els.profileName.textContent = t('guest_name');
+    els.profileAvatar.textContent = settings.language === 'en' ? 'G' : 'M';
+    els.profileGames.textContent = t('guest_profile_detail');
+    els.profileRank.textContent = '#–';
+    els.profileSummary.setAttribute('aria-label', t('guest_profile_detail'));
+    els.coinCount.textContent = '0';
+    els.leagueStatus.textContent = t('guest_ready');
+  }
+
+  function enterGuestMode() {
+    guestMode = true;
+    profile = null;
+    currentPlayer = null;
+    best = 0;
+    meteorBest = 0;
+    coins = 0;
+    selectedPlanet = 'mercury';
+    ownedPlanets = ['mercury'];
+    els.profileError.classList.remove('is-status');
+    els.profileError.textContent = '';
+    els.profileForm.classList.add('hidden');
+    els.profileSummary.classList.remove('hidden');
+    els.profileSummary.disabled = false;
+    els.startBtn.disabled = false;
+    els.shopBtn.disabled = true;
+    els.homeMissionsBtn.disabled = true;
+    els.homePlanetsBtn.disabled = true;
+    els.deleteAccountBtn.disabled = true;
+    els.passwordAccountBtn.disabled = true;
+    els.logoutBtn.disabled = true;
+    els.adminBtn.classList.add('hidden');
+    applyPlanet(selectedPlanet);
+    renderGuestProfile();
+    renderPlanetShop();
+    updateModeUi();
+  }
+
+  function leaveGuestMode() {
+    if (!guestMode || state.playing) return;
+    guestMode = false;
+    best = Number(localStorage.getItem('yorunge-best') || 0);
+    meteorBest = Number(localStorage.getItem('yorunge-meteor-best') || 0);
+    els.profileForm.classList.remove('hidden');
+    els.profileSummary.classList.add('hidden');
+    els.profileSummary.disabled = true;
+    els.profileSummary.setAttribute('aria-label', t('profile_open'));
+    els.startBtn.disabled = true;
+    els.shopBtn.disabled = false;
+    els.leagueStatus.textContent = t('guest_status');
+    setTimeout(() => els.usernameInput.focus(), 0);
   }
 
   function updateModeUi() {
@@ -597,7 +655,7 @@
   }
 
   function requestStartGame() {
-    if (!profile) {
+    if (!profile && !guestMode) {
       els.usernameInput.focus();
       return;
     }
@@ -799,6 +857,7 @@
   }
 
   function adoptPlayer(player, token = '') {
+    guestMode = false;
     const savedToken = token || (profile?.playerId === player.id ? profile.token : '');
     profile = { username: player.username, playerId: player.id, token: savedToken };
     localStorage.setItem('yorunge-profile-v2', JSON.stringify(profile));
@@ -809,7 +868,7 @@
     try {
       const data = await api('/api/account', { headers: {} });
       accountIdentity = data.account || null;
-      if (data.player) adoptPlayer(data.player);
+      if (data.player && !guestMode) adoptPlayer(data.player);
     } catch (_) {
       // Hesap başlığı kullanılamazsa cihaz anahtarıyla kayıt akışı devam eder.
     }
@@ -875,6 +934,7 @@
     const activeButton = authAction === 'register' ? els.registerBtn : els.loginBtn;
     const username = els.usernameInput.value.trim();
     const password = els.passwordInput.value;
+    els.profileError.classList.remove('is-status');
     els.profileError.textContent = '';
     if (!/^[A-Za-z0-9_]{3,16}$/.test(username)) {
       els.profileError.textContent = t('username_invalid');
@@ -890,8 +950,10 @@
     }
     els.loginBtn.disabled = true;
     els.registerBtn.disabled = true;
+    els.guestBtn.disabled = true;
     els.profileForm.setAttribute('aria-busy', 'true');
     activeButton.textContent = t(`${authAction}_processing`);
+    els.profileError.classList.add('is-status');
     els.profileError.textContent = t(`${authAction}_processing`);
     try {
       const data = await api('/api/auth', { method: 'POST', body: JSON.stringify({ action: authAction, username, password }) });
@@ -900,13 +962,18 @@
       els.passwordInput.value = '';
       els.profileError.textContent = '';
       await loadLeaderboard();
-    } catch (error) { els.profileError.textContent = error.message; }
+    } catch (error) {
+      els.profileError.classList.remove('is-status');
+      els.profileError.textContent = error.message;
+    }
     finally {
       els.loginBtn.disabled = false;
       els.registerBtn.disabled = false;
+      els.guestBtn.disabled = false;
       els.profileForm.removeAttribute('aria-busy');
       els.loginBtn.textContent = t('login');
       els.registerBtn.textContent = t('create_account');
+      if (!els.profileError.textContent) els.profileError.classList.remove('is-status');
     }
   }
 
@@ -992,6 +1059,7 @@
     localStorage.removeItem('yorunge-best');
     profile = null;
     currentPlayer = null;
+    guestMode = false;
     best = 0;
     coins = 0;
     selectedMode = 'classic';
@@ -1005,7 +1073,9 @@
     els.usernameInput.value = '';
     els.passwordInput.value = '';
     els.profileError.textContent = t(statusKey);
+    els.profileError.classList.remove('is-status');
     els.startBtn.disabled = true;
+    els.shopBtn.disabled = false;
     els.homeMissionsBtn.disabled = true;
     els.homePlanetsBtn.disabled = true;
     els.deleteAccountBtn.disabled = true;
@@ -1958,7 +2028,7 @@
   }
 
   function startGame() {
-    if (!profile) {
+    if (!profile && !guestMode) {
       els.usernameInput.focus();
       return;
     }
@@ -1993,6 +2063,11 @@
   }
 
   async function submitRun(final, snapshot) {
+    if (guestMode) {
+      els.resultRank.textContent = t('guest_result');
+      els.againBtn.disabled = false;
+      return;
+    }
     if (!profile) return;
     try {
       const data = await api('/api/score', {
@@ -2053,10 +2128,10 @@
     els.finalBestLabel.textContent = t('record');
     els.resultEyebrow.textContent = t(state.mode === 'meteor' ? 'meteor_completed' : 'classic_completed');
     els.resultNote.textContent = state.wasRecord ? t('personal_best') : t('lives_out');
-    els.resultRank.textContent = t('score_saving');
+    els.resultRank.textContent = guestMode ? t('guest_result') : t('score_saving');
     els.againBtn.textContent = t('play_again');
     els.againBtn.disabled = false;
-    renderResultServer();
+    if (!guestMode) renderResultServer();
   }
 
   function continueFromResult() {
@@ -2087,10 +2162,10 @@
     const oldBest = state.mode === 'meteor' ? meteorBest : best;
     if (state.mode === 'meteor' && final > meteorBest) {
       meteorBest = final;
-      localStorage.setItem('yorunge-meteor-best', String(meteorBest));
+      if (!guestMode) localStorage.setItem('yorunge-meteor-best', String(meteorBest));
     } else if (state.mode === 'classic' && final > best) {
       best = final;
-      localStorage.setItem('yorunge-best', String(best));
+      if (!guestMode) localStorage.setItem('yorunge-best', String(best));
     }
     state.finalScore = final;
     state.wasRecord = final > oldBest;
@@ -2106,6 +2181,7 @@
     const action = event.submitter?.dataset.authAction === 'register' ? 'register' : 'login';
     authenticateWithPassword(action, event);
   });
+  els.guestBtn.addEventListener('click', enterGuestMode);
   els.startBtn.addEventListener('click', requestStartGame);
   els.tutorialLaterBtn.addEventListener('click', () => closeSheet(els.tutorialSheet));
   els.tutorialStartBtn.addEventListener('click', startFromTutorial);
@@ -2154,6 +2230,10 @@
   els.restartBtn.addEventListener('click', () => abandonRun(false));
   els.pauseHomeBtn.addEventListener('click', () => abandonRun(true));
   els.profileSummary.addEventListener('click', () => {
+    if (guestMode) {
+      leaveGuestMode();
+      return;
+    }
     if (!currentPlayer) return;
     renderPlayerProfile();
     openSheet(els.profileSheet);
