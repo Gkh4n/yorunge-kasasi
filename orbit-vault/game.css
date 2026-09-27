@@ -538,7 +538,8 @@ body:not(.is-playing) #settingsBtn { display: none; }
 .profile-form button { min-height: 44px; padding: 0 16px; border: 0; border-radius: 13px; color: #10200e; background: var(--lime); font-size: .78rem; font-weight: 900; cursor: pointer; }
 .profile-form button.auth-secondary { border: 1px solid color-mix(in srgb, var(--lime) 38%, var(--line)); color: var(--lime); background: color-mix(in srgb, var(--lime) 7%, transparent); }
 .profile-form button:disabled { opacity: .48; cursor: wait; }
-.profile-error { min-height: 15px; padding: 4px 3px 0; color: var(--red); font-size: .75rem; }
+.profile-form[aria-busy="true"] { cursor: progress; }
+.profile-error { min-height: 20px; padding: 5px 3px 0; color: var(--red); font-size: .78rem; line-height: 1.35; }
 .profile-summary { width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 14px; color: var(--ink); background: var(--soft); cursor: pointer; text-align: left; }
 .profile-summary:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
 .avatar { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; color: #10200e; background: linear-gradient(135deg, var(--lime), var(--mint)); font-size: .85rem; font-weight: 950; }
