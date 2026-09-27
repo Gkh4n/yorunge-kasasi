@@ -56,7 +56,7 @@
       settings_open: 'Ayarları aç', pause_label: 'Oyunu durdur', resume_label: 'Oyuna devam et', game_label: 'Yörünge Kasası oyunu', profile_open: 'Profili aç', admin_open: 'Yönetim panelini aç', admin_close: 'Yönetim panelini kapat',
       speed: 'Hız', vault: 'Kasa', streak: 'Seri', lives: 'Kalan hak', arena_label: 'Yakalamak için oyun alanına dokun',
       tap_hint: 'Gezegen kapıdayken dokun', tap_zone_title: 'OYUN ALANINA DOKUN', tap_zone_detail: 'Gezegeni kapının içinde yakala', energy_at_risk: 'riskteki enerji', bank: 'KASALA', use_power: 'KULLAN', coins: 'JETON', username: 'Kullanıcı adı', password: 'Şifre',
-      login: 'GİRİŞ YAP', create_account: 'KAYIT OL', player: 'Oyuncu', ranking: 'SIRALAMA', mode_select: 'Oyun modu seçimi', classic: 'KLASİK',
+      login: 'GİRİŞ YAP', create_account: 'KAYIT OL', login_processing: 'Giriş yapılıyor…', register_processing: 'Hesap oluşturuluyor…', player: 'Oyuncu', ranking: 'SIRALAMA', mode_select: 'Oyun modu seçimi', classic: 'KLASİK',
       classic_detail: '3 hak · sınırsız', meteor: 'METEOR YAĞMURU', meteor_detail: 'Kapıyı kaydır · meteorları yakala', meteor_arena_label: 'Kapıyı sağa sola sürükleyerek meteorları yakala', meteor_steer: 'KAPIYI SAĞA SOLA SÜRÜKLE',
       leaderboard_label: 'Skor sıralaması', score_league: 'SKOR LİGİ', classic_short: 'KLASİK', meteor_short: 'METEOR', now: 'Şimdi', player_col: 'OYUNCU', game_col: 'OYUN',
       score_col: 'SKOR', scores_loading: 'Skorlar yükleniyor…', game_completed: 'Oyun tamamlandı', score_saving: 'Skorun kaydediliyor…',
@@ -121,7 +121,7 @@
       settings_open: 'Open settings', pause_label: 'Pause game', resume_label: 'Resume game', game_label: 'Orbit Vault game', profile_open: 'Open profile', admin_open: 'Open admin panel', admin_close: 'Close admin panel',
       speed: 'Speed', vault: 'Vault', streak: 'Streak', lives: 'Lives remaining', arena_label: 'Tap the game area to catch',
       tap_hint: 'Tap when the planet reaches the gate', tap_zone_title: 'TAP THE PLAY AREA', tap_zone_detail: 'Catch the planet inside the gate', energy_at_risk: 'energy at risk', bank: 'BANK', use_power: 'USE', coins: 'COINS', username: 'Username', password: 'Password',
-      login: 'SIGN IN', create_account: 'CREATE ACCOUNT', player: 'Player', ranking: 'RANK', mode_select: 'Game mode selection', classic: 'CLASSIC',
+      login: 'SIGN IN', create_account: 'CREATE ACCOUNT', login_processing: 'Signing in…', register_processing: 'Creating account…', player: 'Player', ranking: 'RANK', mode_select: 'Game mode selection', classic: 'CLASSIC',
       classic_detail: '3 lives · endless', meteor: 'METEOR STORM', meteor_detail: 'Slide the gate · catch meteors', meteor_arena_label: 'Slide the gate left and right to catch meteors', meteor_steer: 'DRAG THE GATE LEFT AND RIGHT',
       leaderboard_label: 'Score leaderboard', score_league: 'SCORE LEAGUE', classic_short: 'CLASSIC', meteor_short: 'METEOR', now: 'Now', player_col: 'PLAYER', game_col: 'GAMES',
       score_col: 'SCORE', scores_loading: 'Loading scores…', game_completed: 'Game complete', score_saving: 'Saving your score…',
@@ -871,6 +871,8 @@
 
   async function authenticateWithPassword(action, event) {
     event?.preventDefault();
+    const authAction = action === 'register' ? 'register' : 'login';
+    const activeButton = authAction === 'register' ? els.registerBtn : els.loginBtn;
     const username = els.usernameInput.value.trim();
     const password = els.passwordInput.value;
     els.profileError.textContent = '';
@@ -888,16 +890,23 @@
     }
     els.loginBtn.disabled = true;
     els.registerBtn.disabled = true;
+    els.profileForm.setAttribute('aria-busy', 'true');
+    activeButton.textContent = t(`${authAction}_processing`);
+    els.profileError.textContent = t(`${authAction}_processing`);
     try {
-      const data = await api('/api/auth', { method: 'POST', body: JSON.stringify({ action, username, password }) });
+      const data = await api('/api/auth', { method: 'POST', body: JSON.stringify({ action: authAction, username, password }) });
       if (!data.credentials?.token) throw new Error(t('network_error'));
       adoptPlayer(data.player, data.credentials.token);
       els.passwordInput.value = '';
+      els.profileError.textContent = '';
       await loadLeaderboard();
     } catch (error) { els.profileError.textContent = error.message; }
     finally {
       els.loginBtn.disabled = false;
       els.registerBtn.disabled = false;
+      els.profileForm.removeAttribute('aria-busy');
+      els.loginBtn.textContent = t('login');
+      els.registerBtn.textContent = t('create_account');
     }
   }
 
@@ -2093,8 +2102,10 @@
     beep(250, .1, 'triangle');
   }
 
-  els.profileForm.addEventListener('submit', (event) => authenticateWithPassword('login', event));
-  els.registerBtn.addEventListener('click', (event) => authenticateWithPassword('register', event));
+  els.profileForm.addEventListener('submit', (event) => {
+    const action = event.submitter?.dataset.authAction === 'register' ? 'register' : 'login';
+    authenticateWithPassword(action, event);
+  });
   els.startBtn.addEventListener('click', requestStartGame);
   els.tutorialLaterBtn.addEventListener('click', () => closeSheet(els.tutorialSheet));
   els.tutorialStartBtn.addEventListener('click', startFromTutorial);
