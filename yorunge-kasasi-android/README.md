@@ -11,8 +11,8 @@ chmod +x scripts/build-apk.sh
 ./scripts/build-apk.sh
 ```
 
-Çıktı `output/Yorunge-Kasasi-1.9.7.apk` konumunda oluşur.
+Çıktı `output/Yorunge-Kasasi-1.9.8.apk` konumunda oluşur.
 
-1.9.7 sürümünde mobil hesap oluşturma akışı düzeltildi; kayıt formu tek bir güvenilir gönderim yoluna alındı ve işlem/hata geri bildirimi belirginleştirildi. Bu sürüm, 1.9.6'daki sade ana ekranı ve oyun iyileştirmelerini de içerir.
+1.9.8 sürümünde misafir girişi eklendi; misafir skorları liglere gönderilmez. Giriş ve kayıt işlemi sürerken gösterilen durum mesajları nötr renge alındı. Bu sürüm, önceki hesap ve arayüz düzeltmelerini de içerir.
 
 Bu sürüm prototip anahtarıyla imzalanmıştır. Google Play dağıtımı için geliştiriciye ait kalıcı bir yayın anahtarı kullanılmalıdır.
