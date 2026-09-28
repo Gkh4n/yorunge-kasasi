@@ -73,10 +73,10 @@ fi
   --ks-key-alias androiddebugkey \
   --ks-pass pass:android \
   --key-pass pass:android \
-  --out "${OUTPUT_DIR}/Yorunge-Kasasi-1.9.7.apk" \
+  --out "${OUTPUT_DIR}/Yorunge-Kasasi-1.9.8.apk" \
   "${BUILD_DIR}/app-aligned.apk"
 
 "${BUILD_TOOLS}/apksigner" verify \
   --verbose \
   --print-certs \
-  "${OUTPUT_DIR}/Yorunge-Kasasi-1.9.7.apk"
+  "${OUTPUT_DIR}/Yorunge-Kasasi-1.9.8.apk"
